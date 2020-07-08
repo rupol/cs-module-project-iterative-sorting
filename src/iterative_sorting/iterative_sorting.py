@@ -8,7 +8,6 @@ def selection_sort(arr):
         # (hint, can do in 3 loc)
         # Your code here
 
-
         # TO-DO: swap
         # Your code here
 
@@ -17,10 +16,24 @@ def selection_sort(arr):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Your code here
-
-
+    # loop through array until no swaps are performed
+    was_swapped = True
+    while was_swapped:
+        was_swapped = False
+        for i in range(0, (len(arr) - 1)):
+            current_item = arr[i]
+            j = i + 1
+            next_item = arr[j]
+            # compare current item to next item
+            # if current item is greater than next item, swap
+            if current_item > next_item:
+                was_swapped = True
+                arr[i], arr[j] = arr[j], arr[i]
     return arr
+
+
+my_list = [8, 5, 2, 4, 1, 3]
+print(bubble_sort(my_list))
 
 '''
 STRETCH: implement the Counting Sort function below
@@ -39,8 +52,9 @@ buckets.
 
 What is the time and space complexity of the counting sort algorithm?
 '''
+
+
 def counting_sort(arr, maximum=None):
     # Your code here
-
 
     return arr
